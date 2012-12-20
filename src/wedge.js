@@ -60,6 +60,25 @@
             this.accelAudioAvailable = true;
         }
     };
+    
+    /**
+     * Get a sound from the internal collection.
+     * 
+     * Not compatible with LowLatencyAudio.
+     * 
+     * @param wedge Wedge We pass in the Wedge object so that this function is
+     * not a "public method" on Wedge. Otherwise, it would cloud the interface.
+     * @param path String e.g. "sfx/foo.wav"
+     */
+    function getSound(wedge, path) {
+        var sound = wedge.samples[path];
+        if(sound === null) {
+            wedge.error("Wedge.js: Could not play sample " + path + "; perhaps it has not been preloaded?");
+            return false;
+        }
+
+        return sound;
+    }
 
     /**
      * Error message. Displayed on the console.
@@ -75,39 +94,26 @@
      * have not preloaded.
      * 
      * @param path String e.g. "sfx/foo.wav"
+     * 
+     * @return Wedge For chaining method calls
      */
     Wedge.prototype.preload = function(path) {
+        
         if(this.accelAudioAvailable) {
             LowLatencyAudio.preloadAudio(path, path, 2);
         } else {
             this.samples[path] = new buzz.sound(path);
         }
-    };
-
-    /**
-     * Get a sound from the internal collection.
-     * 
-     * Not compatible with LowLatencyAudio.
-     * 
-     * @param wedge Wedge We pass in the Wedge object so that this function is
-     * not a "public method" on Wedge. Otherwise, it would cloud the interface.
-     * 
-     * @param path String e.g. "sfx/foo.wav"
-     */
-    function getSound(wedge, path) {
-        var sound = wedge.samples[path];
-        if(sound === null) {
-            wedge.error("Wedge.js: Could not play sample " + path + "; perhaps it has not been preloaded?");
-            return false;
-        }
-
-        return sound;
+        
+        return this;
     };
 
     /**
      * Play a sample identified by its path.
      * This will play using accelerated audio if available.
      * @param path String e.g. "sfx/foo.wav"
+     * 
+     * @return Wedge For chaining method calls
      */
     Wedge.prototype.play = function(path) {
 
@@ -116,7 +122,7 @@
         } else {
             var sound = getSound(this, path);
             if(!sound) {
-                return;
+                return this;
             }
 
             // Trigger the sound from the start
@@ -126,29 +132,38 @@
                 sound.setPercent(0);
             }
         }
+        
+        return this;
     };
 
     /**
      * Start looping a sample identified by its path
      * This will play using accelerated audio if available.
      * @param path String e.g. "sfx/foo.wav"
+     * 
+     * @return Wedge For chaining method calls
      */
     Wedge.prototype.loop = function(path) {
+        
         if(this.accelAudioAvailable) {
             LowLatencyAudio.loop(path);
         } else {
             var sound = getSound(this, path);
             if(!sound) {
-                return;
+                return this;
             }
 
             sound.play().loop();
         }
+        
+        return this;
     };
 
     /**
      * Stop a sample identified by its path
      * @param path String e.g. "sfx/foo.wav"
+     * 
+     * @return Wedge For chaining method calls
      */
     Wedge.prototype.stop = function(path) {
 
@@ -157,11 +172,13 @@
         } else {
             var sound = getSound(this, path);
             if(!sound) {
-                return;
+                return this;
             }
 
             sound.stop();
         }
+        
+        return this;
     };
     
     // export an instance of Wedge to the global object
