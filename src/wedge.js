@@ -83,7 +83,7 @@
      */
     function getSound(wedge, path) {
         var sound = wedge.samples[path];
-        if(sound === null) {
+        if(sound === null || typeof sound === 'undefined') {
             wedgeError("Wedge.js: Could not play sample " + path + "; perhaps it has not been preloaded?");
             return false;
         }
