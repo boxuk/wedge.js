@@ -7,91 +7,87 @@
         <link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
     </head>
     <body>
-        
+
         <div class="navbar navbar-inverse navbar-fixed-top">
-                <div class="navbar-inner">
-                    <a class="brand" href="PlaySample.html">Wedge.js</a>
-                    <ul class="nav pull-right" >
-                        <li><a href="http://www.boxuk.com/">Brought to you by Box UK</a></li>
-                    </ul>
-                    
-                </div>
+            <div class="navbar-inner">
+                <a class="brand" href="https://github.com/boxuk/wedge.js" title="Wedge.js on Github">Wedge.js</a>
+                <ul class="nav pull-right" >
+                    <li><a href="http://www.boxuk.com/">Brought to you by Box UK</a></li>
+                </ul>
             </div>
-        
+        </div>
+
         <header class="jumbotron subhead" id="overview" style="margin-top: 80px;">
             <div class="container">
-              <h1>Wedge.js</h1>
-              <p class="lead">A super-simple HTML5 audio library that supports low latency on mobile</p>
+                <h1>Wedge.js</h1>
+                <p class="lead">A super-simple HTML5 audio library that supports low latency on mobile</p>
             </div>
         </header>
-        
+
         <div class="container">
-            
             <div class="row">
                 <div class="span6">
                     <h2>Play a sample</h2>
-                    
+
                     <p>This is a simple example of preloading a sample and playing it</p>
-                    
+
                     <button class="btn btnPlaySample" data-sample="sfx/sawtooth.wav">Play sawtooth.wav</button>
                     <button class="btn btnPlaySample" data-sample="sfx/sine.wav">Play sine.wav</button>
                     <button class="btn btnPlaySample" data-sample="sfx/square.wav">Play square.wav</button>
-                    </div>
+                </div>
                 <div class="span6">
                     <h2>Code to do this</h2>
-                    
+
                     <pre class="prettyprint linenums language-javascript" id="scriptOne_out">Loading...</pre>
-                
                 </div>
             </div>
             <div class="row">
                 <div class="span6">
                     <h2>Loop</h2>
-                    
+
                     <p>This is a simple example of looping a sample</p>
-                    
+
                     <button class="btn btnStartLoop success">Start loop</button>
                     <button class="btn btnStopLoop warning">Stop loop</button>
                 </div>
                 <div class="span6">
                     <h2>Code to do this</h2>
-                    
+
                     <pre class="prettyprint linenums language-javascript" id="scriptTwo_out">Loading...</pre>
-                
                 </div>
             </div>
         </div>
-        
+
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
         <script type="text/javascript" src="../lib/buzz/buzz.js"></script>
         <script type="text/javascript" src="../src/wedge.js"></script>
         <script type="text/javascript" id="scriptOne">
-        var setUpSamples =  function() {
-            // Preload the audio with Wedge
-            wedge.preload('sfx/sawtooth.wav')
-                 .preload('sfx/sine.wav')
-                 .preload('sfx/square.wav');
+            var setUpSamples =  function() {
+                // Preload the audio with Wedge
+                wedge.preload('sfx/sawtooth.wav')
+                .preload('sfx/sine.wav')
+                .preload('sfx/square.wav');
 
-            // Set up controls on page
-            $('.btnPlaySample').click(function() {
-                wedge.play($(this).attr('data-sample'));
-            });
-        };
+                // Set up controls on page
+                $('.btnPlaySample').click(function() {
+                    wedge.play($(this).attr('data-sample'));
+                });
+            };
         </script>
         <script type="text/javascript" id="scriptTwo">
-        var setUpLoop =  function() {
-            // Preload the audio with Wedge
-            wedge.preload('sfx/GIsForGalaxy.wav');
+            var setUpLoop =  function() {
+                // Preload the audio with Wedge
+                wedge.preload('sfx/GIsForGalaxy.wav');
 
-            // Set up controls on page
-            $('.btnStartLoop').click(function() {
-                wedge.loop('sfx/GIsForGalaxy.wav');
-            });
-            $('.btnStopLoop').click(function() {
-                wedge.stop('sfx/GIsForGalaxy.wav');
-            });
-        };
+                // Set up controls on page
+                $('.btnStartLoop').click(function() {
+                    wedge.loop('sfx/GIsForGalaxy.wav');
+                });
+                $('.btnStopLoop').click(function() {
+                    wedge.stop('sfx/GIsForGalaxy.wav');
+                });
+            };
         </script>
         <script type="text/javascript">
             window.onload = function() {
