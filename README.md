@@ -36,7 +36,7 @@ Optional Dependencies
  
 License
 -------
- * [MIT licensed](LICENSE-MIT)
+ * MIT licensed (see LICENSE-MIT)
  
 Support
 -------
