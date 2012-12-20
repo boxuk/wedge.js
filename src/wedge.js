@@ -1,4 +1,4 @@
-/*global LowLatencyAudio,cordova,Media,LocalFileSystem,buzz*/
+/*global LowLatencyAudio,cordova,Media,LocalFileSystem,buzz,console*/
 /**
  * Wedge.js - Tiny audio library that provides HTML5 apps with low latency audio
  * if available, and falls back to Buzz.js 
@@ -47,7 +47,7 @@
 
         // Check dependencies
         if (typeof buzz === 'undefined') {
-            throw new Exception('Missing dependency: Buzz!. You can download Buzz! from ttp://buzz.jaysalvat.com/');
+            throw('Missing dependency: Buzz!. You can download Buzz! from ttp://buzz.jaysalvat.com/');
         }
 
         // only used if not accelerated
@@ -86,7 +86,7 @@
      * @param msg String The message to display
      */
     Wedge.prototype.error = function(msg) {
-        console.log("Wedge.js: Could play sample " + sample + "; perhaps it has not been preloaded?");
+        console.log(msg);
     };
 
     /**
