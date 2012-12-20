@@ -20,7 +20,7 @@ Under the hood, it uses the LowLatencyAudio plugin for Cordova to provide much m
 Documentation
 -------------
 
-For usage examples, please see the ["examples" directory of this project](examples/PlaySample.html).
+For usage examples, please see the "examples" directory of this project. There is also <a href="http://boxuk.github.com/wedge.js/">a Github page showing this in action</a>!
  
 Dependencies
 ------------
@@ -46,4 +46,4 @@ Support
 
 Contributing
 ------------
-For contributing guidelines, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+For contributing guidelines, please see CONTRIBUTING.md
