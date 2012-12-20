@@ -22,7 +22,7 @@
  * * Apache Cordova - http://cordova.apache.org/ - if you're building HTML5 for
  *   native
  * * Cordova Low Latency Audio plugin - https://github.com/phonegap/phonegap-plugins/tree/master/iPhone/LowLatencyAudio - 
- *   low latency audio for iOs and Android
+ *   low latency audio for iOS and Android
  * 
  * Usage:
  * 
@@ -39,7 +39,7 @@
  * MIT licensed
  * 
  * Support:
- * * Tested with iOs/Cordova
+ * * Tested with iOS/Cordova
  * * Should also work with Android
  */
 (function() {

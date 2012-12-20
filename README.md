@@ -31,8 +31,8 @@ Dependencies
 Optional Dependencies
 ---------------------
 
- * [Apache Cordova](http://cordova.apache.org/) - if you're building HTML5 for native iOs/Android.
- * [Cordova Low Latency Audio plugin](https://github.com/phonegap/phonegap-plugins/tree/master/iPhone/LowLatencyAudio) - low latency audio for iOs and Android.
+ * [Apache Cordova](http://cordova.apache.org/) - if you're building HTML5 for native iOS/Android.
+ * [Cordova Low Latency Audio plugin](https://github.com/phonegap/phonegap-plugins/tree/master/iPhone/LowLatencyAudio) - low latency audio for iOS and Android.
  
 License
 -------
@@ -41,8 +41,8 @@ License
 Support
 -------
 
- * Tested with iOs/Cordova
- * Should also work with Android
+ * Tested with iOS/Cordova/Low Latency Audio plugin
+ * Should also work with Android/Cordova/Low Latency Audio plugin
 
 Contributing
 ------------
