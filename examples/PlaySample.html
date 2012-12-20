@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wedge.js - Play a sample</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="PlaySample.html">Wedge.js</a>
+                    <ul class="nav">
+                        <li class="active"><a href="PlaySample.html">Play sample</a></li>
+                        <li><a href="LoopSample.html">Loop sample</a></li>
+                        <li><a href="ToggleSample.html">Toggle sample</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <h1>Play a sample</h1>
+                    
+                    <p>This is a simple example of preloading a sample and playing it</p>
+                    
+                    
+                
+                
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="../src/wedge.js"></script>
+        <script type="text/javascript">
+            document.onload = function() {
+                (function() {
+                    console.log("Wedge is " + wedge);
+                })(wedge);
+            }
+        </script>
+    </body>
+</html>

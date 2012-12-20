@@ -47,7 +47,7 @@
 
         // Check dependencies
         if (typeof buzz === 'undefined') {
-            throw new Error('Missing dependency: Buzz!. You can download Buzz! from ttp://buzz.jaysalvat.com/');
+            throw new Error('Missing dependency: Buzz!. You can download Buzz! from http://buzz.jaysalvat.com/');
         }
 
         // only used if not accelerated
