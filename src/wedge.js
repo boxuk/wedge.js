@@ -62,6 +62,17 @@
     };
     
     /**
+     * Error message. Displayed on the console.
+     * 
+     * @param msg String The message to display
+     */
+    function wedgeError(msg) {
+        if(typeof console !== "undefined") {
+            console.log(msg);
+        }
+    }
+
+    /**
      * Get a sound from the internal collection.
      * 
      * Not compatible with LowLatencyAudio.
@@ -73,22 +84,13 @@
     function getSound(wedge, path) {
         var sound = wedge.samples[path];
         if(sound === null) {
-            wedge.error("Wedge.js: Could not play sample " + path + "; perhaps it has not been preloaded?");
+            wedgeError("Wedge.js: Could not play sample " + path + "; perhaps it has not been preloaded?");
             return false;
         }
 
         return sound;
     }
-
-    /**
-     * Error message. Displayed on the console.
-     * 
-     * @param msg String The message to display
-     */
-    Wedge.prototype.error = function(msg) {
-        console.log(msg);
-    };
-
+    
     /**
      * Preload a sample into Wedge. You should not try to play a sample that you
      * have not preloaded.
