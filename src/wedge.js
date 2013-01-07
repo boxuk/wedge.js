@@ -42,7 +42,7 @@
  * * Tested with iOS/Cordova
  * * Should also work with Android
  */
-;(function() {
+(function() {
     var Wedge = function() {
 
         // Check dependencies
