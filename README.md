@@ -20,8 +20,20 @@ Under the hood, it uses the LowLatencyAudio plugin for Cordova to provide much m
 Documentation
 -------------
 
+Clone the repo, then cd to the directory. This may be something like:
+
+    git clone git://github.com/boxuk/wedge.js.git
+    cd wedge.js
+
+Then, load the dependency on Buzz.js as a submodule:
+
+    git submodule init
+    git submodule update
+
 For usage examples, please see the "examples" directory of this project. There is also <a href="http://boxuk.github.com/wedge.js/examples/index.html">a Github page showing this in action</a>!
- 
+
+If you're running a Cordova/PhoneGap project and want LowLatencyAudio, see the documentation for the [Cordova Low Latency Audio plugin](https://github.com/phonegap/phonegap-plugins/tree/master/iPhone/LowLatencyAudio) and make sure that dependency is available to your application.
+
 Dependencies
 ------------
 
