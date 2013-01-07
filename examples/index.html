@@ -65,33 +65,29 @@
         <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
         <script type="text/javascript" src="../lib/buzz/buzz.js"></script>
         <script type="text/javascript" src="../src/wedge.js"></script>
-        <script type="text/javascript" id="scriptOne">
-            var setUpSamples =  function() {
-                // Preload the audio with Wedge
-                wedge.preload('sfx/sawtooth.wav')
-                .preload('sfx/sine.wav')
-                .preload('sfx/square.wav');
+        <script type="text/javascript" id="scriptOne">var setUpSamples =  function() {
+    // Preload the audio with Wedge
+    wedge.preload('sfx/sawtooth.wav')
+    .preload('sfx/sine.wav')
+    .preload('sfx/square.wav');
 
-                // Set up controls on page
-                $('.btnPlaySample').click(function() {
-                    wedge.play($(this).attr('data-sample'));
-                });
-            };
-        </script>
-        <script type="text/javascript" id="scriptTwo">
-            var setUpLoop =  function() {
-                // Preload the audio with Wedge
-                wedge.preload('sfx/GIsForGalaxy.wav');
+    // Set up controls on page
+    $('.btnPlaySample').click(function() {
+        wedge.play($(this).attr('data-sample'));
+    });
+};</script>
+        <script type="text/javascript" id="scriptTwo">var setUpLoop =  function() {
+    // Preload the audio with Wedge
+    wedge.preload('sfx/GIsForGalaxy.wav');
 
-                // Set up controls on page
-                $('.btnStartLoop').click(function() {
-                    wedge.loop('sfx/GIsForGalaxy.wav');
-                });
-                $('.btnStopLoop').click(function() {
-                    wedge.stop('sfx/GIsForGalaxy.wav');
-                });
-            };
-        </script>
+    // Set up controls on page
+    $('.btnStartLoop').click(function() {
+        wedge.loop('sfx/GIsForGalaxy.wav');
+    });
+    $('.btnStopLoop').click(function() {
+        wedge.stop('sfx/GIsForGalaxy.wav');
+    });
+};</script>
         <script type="text/javascript">
             window.onload = function() {
                 setUpSamples();
