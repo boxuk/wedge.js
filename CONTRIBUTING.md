@@ -11,7 +11,7 @@ Notes
 Adding a feature
 ----------------
 
-- Branch from master - `git fetch origin` `git checkout -b feature-x origin/master`
+- Branch from master - `git fetch origin` `git checkout -b feature-x origin/master --no-track`
 - Push to github - `git push origin feature-x`
 - Master updated? rebase onto master - `git fetch origin` `git checkout feature-x` `git rebase origin/master`
 - Update github `git push origin feature-x --force`
